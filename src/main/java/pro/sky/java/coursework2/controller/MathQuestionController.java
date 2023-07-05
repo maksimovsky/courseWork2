@@ -10,12 +10,12 @@ import pro.sky.java.coursework2.service.QuestionService;
 
 import java.util.Collection;
 
-@RequestMapping("/exam/java")
+@RequestMapping("/exam/math")
 @RestController
-public class JavaQuestionController {
+public class MathQuestionController {
     QuestionService service;
 
-    public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService service) {
+    public MathQuestionController(@Qualifier("mathQuestionService") QuestionService service) {
         this.service = service;
     }
 

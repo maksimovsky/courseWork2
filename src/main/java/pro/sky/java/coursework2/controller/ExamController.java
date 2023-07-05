@@ -9,7 +9,7 @@ import pro.sky.java.coursework2.service.ExaminerService;
 
 import java.util.Collection;
 
-@RequestMapping("/exam/java/random")
+@RequestMapping("/exam/")
 @RestController
 public class ExamController {
     ExaminerService service;
@@ -18,8 +18,18 @@ public class ExamController {
         this.service = service;
     }
 
-    @GetMapping
-    public Collection<Question> getQuestions(@RequestParam int amount) {
-        return service.getQuestions(amount);
+    @GetMapping("/java/get")
+    public Collection<Question> getJavaQuestions(@RequestParam int amount) {
+        return service.getJavaQuestions(amount);
+    }
+
+    @GetMapping("/math/get")
+    public Collection<Question> getMathQuestions(@RequestParam int amount) {
+        return service.getMathQuestions(amount);
+    }
+
+    @GetMapping("/get")
+    public Collection<Question> getJavaAndMathQuestions(@RequestParam int amount) {
+        return service.getJavaAndMathQuestions(amount);
     }
 }
